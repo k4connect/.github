@@ -1,0 +1,11 @@
+{
+  "name": "Teamhub Manual Build and Deploy",
+  "description": "Manual trigger for building and deploying a branch to a particular env",
+  "iconName": "example-icon",
+  "categories": [
+    "Nodejs"
+  ],
+  "filePatterns": [
+    "package.json$"
+  ]
+}

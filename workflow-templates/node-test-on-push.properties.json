@@ -1,0 +1,11 @@
+{
+  "name": "Node Test on Push Action",
+  "description": "Node test on push action template",
+  "iconName": "example-icon",
+  "categories": [
+    "Nodejs"
+  ],
+  "filePatterns": [
+    "package.json$"
+  ]
+}
