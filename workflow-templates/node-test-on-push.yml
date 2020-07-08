@@ -1,0 +1,13 @@
+name: Test on Push
+
+on:
+  push:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm config set '//registry.npmjs.org/:_authToken' ${{ secrets.NPM_TOKEN }}
+      - run: npm ci
+      - run: npm test
