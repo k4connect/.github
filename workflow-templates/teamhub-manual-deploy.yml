@@ -1,0 +1,51 @@
+name: Manual Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        required: true
+        description: Environment to deploy to. Valid options are "dev", "staging", and "production"
+        default: staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check stage validity
+        run: |
+          branch=${GITHUB_REF#refs/heads/}
+          env=${{ github.event.inputs.stage }}
+          echo "Deploying branch ${branch} to ${env}"
+          if ([ $env == 'dev' ] || [ $env == 'staging' ] || [ $env == 'production' ])
+          then
+            echo "Valid stage provided, continuing"
+          else
+            echo "Input doesn't match possible envs"
+            exit 1
+          fi
+
+          if ([ $env == 'production' ] && [ $branch != 'master'])
+          then echo "Production must be deployed off of the master branch"
+            exit 1
+          fi
+      - uses: actions/checkout@v2
+      - run: npm config set '//registry.npmjs.org/:_authToken' ${{ secrets.NPM_TOKEN }}
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Deploy
+        run: |
+          echo Deploying bundle to ${{ github.event.inputs.stage }}_bucket
+          aws s3 cp --recursive ./dist ${{ env[env[format('{0}_cloudfront', github.event.inputs.stage)]] }}
+          echo "Invalidating cloudfront cache for ${{ github.event.inputs.stage }}"
+          aws cloudfront create-invalidation --distribution-id ${{ env[format('{0}_cloudfront', github.event.inputs.stage)] }} -- paths /\*
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          dev_bucket: ${{ secrets.DEV_BUCKET }}
+          staging_bucket: ${{ secrets.STAGING_BUCKET}}
+          production_bucket: ${{ secrets.PROD_BUCKET }}
+          dev_cloudfront: ${{ secrets.DEV_CLOUDFRONT }}
+          staging_cloudfront: ${{ secrets.STAGING_CLOUDFRONT }}
+          production_cloudfront: ${{ secrets.PROD_CLOUDFRONT }}
