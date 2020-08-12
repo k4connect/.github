@@ -1,0 +1,15 @@
+{
+  "name": "@k4connect/prettier-config",
+  "version": "1.0.1",
+  "description": "A shared configuration file for Prettier here at K4",
+  "main": "prettier.json",
+  "scripts": {
+    "test": "./script/test",
+    "ajv": "ajv"
+  },
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "ajv-cli": "^3.2.1"
+  }
+}

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -o pipefail
+set -exu
+
+which jq || ( which brew && brew install jq ) || ( echo "Please install 'jq'" && exit -1 )
+
+cd "$(dirname "$0")/.."
+
+FILE=prettier.json
+
+SCHEMA_SOURCE="$(cat "$FILE" | jq -r '.["$schema"]')"
+
+SCHEMA="${TMPDIR}prettier-schema.json"
+wget "$SCHEMA_SOURCE" -O "$SCHEMA"
+npm run ajv -- -s "$SCHEMA" -d "$FILE"
