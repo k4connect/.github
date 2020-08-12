@@ -4,6 +4,7 @@ extends:
   - 'eslint:recommended'
   - "plugin:lodash/recommended"
   - "plugin:promise/recommended"
+  - "problems"
 plugins:
   - lodash
   - promise
