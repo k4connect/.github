@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -o pipefail
+set -exu
+
+cd "$(dirname "$0")/.."
+ROOTDIR="$(pwd)"
+
+for PACKAGE_JSON in ./*/package.json
+do
+	cd "$ROOTDIR/$(dirname "$PACKAGE_JSON")"
+	rm -f ./package-lock.json
+	npm install --save-dev eslint
+	npm audit fix --depth=5
+	npm update --depth=5
+	npm outdated
+done
