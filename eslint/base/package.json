@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The base ESLint configuration for K4Connect",
   "main": ".eslintrc.yml",
   "author": "Robert Fischer and Cloud Services",
@@ -9,6 +9,7 @@
     "eslint": "^7.6.0",
     "eslint-config-problems": "^4.0.0",
     "eslint-plugin-lodash": "^7.1.0",
-    "eslint-plugin-promise": "^4.2.1"
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-regexp": "^0.1.1"
   }
 }

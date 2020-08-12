@@ -2,9 +2,11 @@
 
 extends:
   - 'eslint:recommended'
+  - "problems"
   - "plugin:lodash/recommended"
   - "plugin:promise/recommended"
-  - "problems"
+  - 'plugin:regexp/recommended'
 plugins:
   - lodash
   - promise
+  - regexp
