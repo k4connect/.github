@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/eslint-config-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ESLint configuration for working with Node, assuming the oldest current Node LTS version.",
   "main": ".eslintrc.yml",
   "scripts": {
