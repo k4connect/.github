@@ -1,0 +1,5 @@
+.gitignore
+genTsconfig.js
+script
+tsconfig-schema.json
+*.tgz
