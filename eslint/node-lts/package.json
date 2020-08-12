@@ -1,0 +1,17 @@
+{
+  "name": "@k4connect/eslint-config-node",
+  "version": "1.0.0",
+  "description": "An ESLint configuration for working with Node, assuming the oldest current Node LTS version.",
+  "main": ".eslintrc.yml",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^7.6.0"
+  },
+  "dependencies": {
+    "@k4connect/eslint-config": "^1.0.1"
+  }
+}

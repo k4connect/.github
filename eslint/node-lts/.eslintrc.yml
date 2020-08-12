@@ -1,0 +1,16 @@
+---
+
+env:
+  commonjs: true
+  es2017: true
+  node: true
+extends:
+  - "@k4connect"
+  - "plugin:node/recommended"
+plugins:
+  - node
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parserOptions:
+  ecmaVersion: 2018  # Bump to 2019 when Node 10 is retired
