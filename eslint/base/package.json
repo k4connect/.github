@@ -1,0 +1,11 @@
+{
+  "name": "@k4connect/eslint-config",
+  "version": "1.0.0",
+  "description": "The base ESLint configuration for K4Connect",
+  "main": ".eslintrc.yml",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^7.6.0"
+  }
+}

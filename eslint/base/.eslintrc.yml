@@ -1,0 +1,10 @@
+---
+
+extends:
+  - 'eslint:recommended'
+  - "plugin:lodash/recommended"
+  - "plugin:promise/recommended"
+plugins:
+  - lodash
+  - promise
+rules: {}
