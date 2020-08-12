@@ -6,7 +6,7 @@
   "author": "Robert Fischer and Cloud Services",
   "license": "UNLICENSED",
   "dependencies": {
-    "@k4connect/eslint-config": "^1.0.1",
+    "@k4connect/eslint-config": "^1.0.3",
     "eslint-plugin-jest": "^23.20.0"
   },
   "devDependencies": {

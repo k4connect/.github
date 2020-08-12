@@ -12,6 +12,6 @@
     "eslint": "^7.6.0"
   },
   "dependencies": {
-    "@k4connect/eslint-config": "^1.0.1"
+    "@k4connect/eslint-config": "^1.0.3"
   }
 }
