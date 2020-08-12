@@ -7,4 +7,3 @@ extends:
 plugins:
   - lodash
   - promise
-rules: {}
