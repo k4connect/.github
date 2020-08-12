@@ -1,0 +1,23 @@
+---
+
+overrides:
+  - files:
+      - "__tests__/**/*.js"
+      - "*.test.js"
+      - "*.spec.js"
+    env:
+      node: true
+      jest: true
+      "jest/globals": true
+    plugins:
+      - jest
+    extends:
+      - "plugins:jest/all"
+    rules:
+      "node/no-unpublished-import": "off"
+      "no-magic-numbers": "off"
+      "no-console": "off"
+      "jest/no-commented-out-tests": "warn"
+      "jest/no-hooks": "off"
+      "jest/require-tothrow-message": "off"
+      "no-process-env": "off"

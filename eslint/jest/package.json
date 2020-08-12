@@ -1,0 +1,15 @@
+{
+  "name": "@k4connect/eslint-config-jest",
+  "version": "1.0.0",
+  "description": "The configuration for applying Jest overrides",
+  "main": ".eslintrc.yml",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@k4connect/eslint-config": "^1.0.1",
+    "eslint-plugin-jest": "^23.20.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0"
+  }
+}
