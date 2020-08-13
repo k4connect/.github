@@ -1,0 +1,5 @@
+---
+
+extends:
+  - "@k4connect"
+  - airbnb-babel

@@ -1,0 +1,15 @@
+{
+  "name": "@k4connect/eslint-config-babel",
+  "version": "1.0.0",
+  "description": "The configuration for using Babel in your ESLint configurations",
+  "main": ".eslintrc.yml",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@k4connect/eslint-config": "^1.0.5",
+    "eslint-config-airbnb-babel": "^0.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
