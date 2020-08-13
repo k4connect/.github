@@ -14,3 +14,5 @@ rules:
   indent: "off"
   "@typescript-eslint/indent": "off"
   max-len: "off"
+  "@typescript-eslint/semi": "off"
+  "@typescript-eslint/comma-spacing": "off"
