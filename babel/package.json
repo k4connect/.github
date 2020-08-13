@@ -1,5 +1,5 @@
 {
-  "name": "@k4connect/preset-babel",
+  "name": "@k4connect/babel-preset",
   "version": "1.0.2",
   "description": "Baseline Babel configuration",
   "main": "preset.js",
