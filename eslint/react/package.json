@@ -1,0 +1,25 @@
+{
+  "name": "@k4connect/eslint-config-react",
+  "version": "1.0.1",
+  "description": "The configuration for applying React overrides",
+  "main": ".eslintrc.yml",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@k4connect/eslint-config": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "typescript": "^3.9.7"
+  }
+}

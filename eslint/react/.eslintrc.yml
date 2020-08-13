@@ -1,0 +1,10 @@
+---
+
+extends:
+  - "@k4connect"
+  - react-app
+  - airbnb
+env:
+  browser: false
+  node: false
+  shared-node-browser: true
