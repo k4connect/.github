@@ -2,10 +2,11 @@
 
 extends:
   - 'eslint:recommended'
-  - "problems"
   - "plugin:lodash/recommended"
   - "plugin:promise/recommended"
   - 'plugin:regexp/recommended'
+  - airbnb-base
+  - problems
 plugins:
   - lodash
   - promise
