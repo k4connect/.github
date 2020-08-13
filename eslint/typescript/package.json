@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/eslint-config-typescript",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The configuration for using Typescript in your ESLint configurations",
   "main": ".eslintrc.yml",
   "author": "Robert Fischer and Cloud Services",

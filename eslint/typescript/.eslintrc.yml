@@ -9,3 +9,8 @@ parserOptions:
   project: './tsconfig.json'
 plugins:
   - "@typescript-eslint"
+rules:
+  # Stylistic things are handled by Prettier.
+  indent: "off"
+  "@typescript-eslint/indent": "off"
+  max-len: "off"
