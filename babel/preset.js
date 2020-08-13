@@ -1,5 +1,6 @@
 /** @format */
 
+const _ = require("lodash");
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV.startsWith("dev") || process.env.NODE_ENV.startsWith("test") || process.env.NODE_ENV.startsWith("local");
 const isProduction = !isDev && process.env.NODE_ENV.startsWith("prod");
 

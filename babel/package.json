@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/babel-preset",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Baseline Babel configuration",
   "main": "preset.js",
   "author": "Robert Fischer and Cloud Services",
@@ -22,6 +22,7 @@
     "babel-plugin-transform-promise-to-bluebird": "^2.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-remove-debugger": "^6.9.4",
-    "babel-plugin-transform-undefined-to-void": "^6.9.4"
+    "babel-plugin-transform-undefined-to-void": "^6.9.4",
+    "lodash": "^4.17.20"
   }
 }
