@@ -1,6 +1,6 @@
 {
 	"name": "@k4connect/tsconfig",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "K4 tsconfig files for your extension pleasure",
 	"main": "genTsconfig.js",
 	"scripts": {
@@ -13,5 +13,11 @@
 	"devDependencies": {
 		"ajv-cli": "^3.2.1",
 		"lodash": "^4.17.19"
+	},
+	"dependencies": {
+		"@tsconfig/node10": "^1.0.7",
+		"@tsconfig/node12": "^1.0.7",
+		"@tsconfig/react-native": "^1.0.2",
+		"@tsconfig/recommended": "^1.0.1"
 	}
 }
