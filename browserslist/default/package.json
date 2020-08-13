@@ -1,0 +1,8 @@
+{
+  "name": "@k4connect/browserslist-config",
+  "version": "1.0.0",
+  "description": "A Browserslist configuration covering all of K4Connect's supported runtimes",
+  "main": "browserslist-config.js",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED"
+}
