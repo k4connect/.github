@@ -3,6 +3,7 @@
 const fs = require("fs");
 const _ = require("lodash");
 
+const OLDEST_NODE_LTS = 10;
 
 const TSCONFIG_VERSIONS = {
   node4: {
@@ -67,3 +68,6 @@ _.forEach(
   _.keys(TSCONFIG_VERSIONS),
   (versionName) => process.stdout.write(`${versionName}.json\n`)
 );
+
+fs.copyFileSync(`node${OLDEST_NODE_LTS}.json`, "node.json");
+process.stdout.write("node.json\n");
