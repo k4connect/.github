@@ -25,6 +25,8 @@ add to that array the value: `@k4connect/eslint-config-<env>`.
 
 Done.
 
+Oh, but note that can use multiple environments if you want: add all the ones appropriate for your environment.
+
 Base Config
 --------------
 
