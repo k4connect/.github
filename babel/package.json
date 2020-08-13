@@ -1,0 +1,27 @@
+{
+  "name": "@k4connect/preset-babel",
+  "version": "1.0.1",
+  "description": "Baseline Babel configuration",
+  "main": "preset.js",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.10.4",
+    "@babel/plugin-proposal-function-bind": "^7.10.5",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.11.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel-plugin-minify-dead-code-elimination": "^0.5.1",
+    "babel-plugin-minify-simplify": "^0.5.1",
+    "babel-plugin-remove-debug": "0.0.4",
+    "babel-plugin-transform-promise-to-bluebird": "^2.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "babel-plugin-transform-remove-debugger": "^6.9.4",
+    "babel-plugin-transform-undefined-to-void": "^6.9.4"
+  }
+}
