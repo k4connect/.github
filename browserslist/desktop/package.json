@@ -1,0 +1,8 @@
+{
+  "name": "@k4connect/browserslist-config-desktop",
+  "version": "1.0.0",
+  "description": "A Browserslist configuration for K4Connect's desktop support",
+  "main": "browserslist-config.js",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED"
+}
