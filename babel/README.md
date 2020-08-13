@@ -3,11 +3,32 @@ Babel Preset
 
 This is a shared configuration for Babel. It provides and configures a safe and useful collection of Babel presets and plugins.
 
+Installation
+===============
+
+Install it:
+
+```js
+npm install --save-dev @k4connect/babel-preset
+```
+
+Then merge this into `package.json`:
+
+```json
+{
+	"babel": {
+		"presets": [ "@k4connect/babel-preset" ]
+	}
+}
+```
+
+If you want to do anything fancier, then check out [the Babel documentation on config files](https://babeljs.io/docs/en/config-files), and the questions at the bottom of this file.
+
 Compatibility
 =================
 
-  * `undefined` becomes `void 0` to avoid the weird pre-`strict` case where `undefined` is defined, and also because it's shorter while being equally compressable.
-  * generated EMCAScript compatibility is determined through [`babel-preset-env`](https://babeljs.io/docs/en/next/babel-preset-env.html), which uses [`browserslist`](https://www.npmjs.com/package/browserslist) to determine what compatibility level to use
+	* `undefined` becomes `void 0` to avoid the weird pre-`strict` case where `undefined` is defined, and also because it's shorter while being equally compressable.
+	* generated EMCAScript compatibility is determined through [`babel-preset-env`](https://babeljs.io/docs/en/next/babel-preset-env.html), which uses [`browserslist`](https://www.npmjs.com/package/browserslist) to determine what compatibility level to use
 
 Syntax Extensions
 ======================
@@ -45,8 +66,8 @@ Avoid `bind`/`call`/`apply` with these handy shortcuts.
 
 ```js
 const box = {
-  weight: 2,
-  getWeight() { return this.weight; },
+	weight: 2,
+	getWeight() { return this.weight; },
 };
 
 const { getWeight } = box;
