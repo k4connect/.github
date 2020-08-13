@@ -1,0 +1,17 @@
+{
+  "name": "@k4connect/eslint-config-typescript",
+  "version": "1.0.0",
+  "description": "The configuration for using Typescript in your ESLint configurations",
+  "main": ".eslintrc.yml",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@k4connect/eslint-config": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0"
+  }
+}

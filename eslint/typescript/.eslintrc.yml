@@ -1,0 +1,7 @@
+---
+
+extends:
+  - "@k4connect"
+  - "airbnb-typescript/base"
+parserOptions:
+  project: './tsconfig.json',
