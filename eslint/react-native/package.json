@@ -1,0 +1,16 @@
+{
+  "name": "@k4connect/eslint-config-react-native",
+  "version": "1.0.0",
+  "description": "The configuration for applying React Native ESLint configurations",
+  "main": ".eslintrc.yml",
+  "author": "Robert Fischer and Cloud Services",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@k4connect/eslint-config": "^1.0.5",
+    "@k4connect/eslint-config-react": "^1.0.0",
+    "eslint-plugin-react-native": "^3.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}

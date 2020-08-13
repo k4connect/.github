@@ -1,0 +1,10 @@
+---
+
+plugins:
+  - react-native
+env:
+  "react-native/react-native": true
+extends:
+  - "@k4connect"
+  - "@k4connect/eslint-config-react"
+  - "plugin:react-native/all"
