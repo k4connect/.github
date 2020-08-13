@@ -61,13 +61,17 @@ if(isProduction) {
 	);
 }
 
-module.exports = {
-	presets,
-	plugins,
-	sourceMaps: true,
-	retainLines: isDev,
-	compact: isProduction,
-	minified: isProduction,
-	comments: isDev,
-	ignore: isProduction ? [/^.*\.test\.js$/i] : [],
+module.exports = (api) => {
+	api.assertVersion("^7");
+	api.cache(api.env());
+	return {
+		presets,
+		plugins,
+		sourceMaps: true,
+		retainLines: isDev,
+		compact: isProduction,
+		minified: isProduction,
+		comments: isDev,
+		ignore: isProduction ? [/^.*\.test\.js$/i] : [],
+	};
 };
