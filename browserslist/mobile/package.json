@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/browserslist-config-mobile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Browserslist configuration for K4Connect's mobile support",
   "main": "browserslist-config.js",
   "author": "Robert Fischer and Cloud Services",
