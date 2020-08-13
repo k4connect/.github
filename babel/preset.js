@@ -80,7 +80,6 @@ module.exports = (api) => {
 		retainLines: isDev,
 		compact: isProduction,
 		minified: isProduction,
-		comments: isDev,
-		ignore: isProduction ? [/^.*\.test\.js$/i] : [],
+		comments: isDev
 	};
 };
