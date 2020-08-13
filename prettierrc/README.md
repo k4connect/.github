@@ -7,7 +7,7 @@ This provides the basic [Prettier](https://prettier.io/docs/en/index.html) confi
 First, install the exact latest version as a dev dependency:
 
 ```bash
-npm --save-dev --save-exact @k4connect/prettier-config
+npm install --save-dev --save-exact @k4connect/prettier-config
 ```
 
 Then, add the following key and value to your `package.json`:
