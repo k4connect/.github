@@ -1,0 +1,25 @@
+---
+
+name: ESLint
+
+on:
+  pull_request:
+    - opened
+    - reopened
+    - synchronized
+    - ready_for_review
+  create:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - run: npm install eslint-plugin-only-warn
+      - run: npx eslint --fix --plugin only-warn .
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply ESLint fixes
+      - run: npx eslint .
