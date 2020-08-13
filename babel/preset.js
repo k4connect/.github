@@ -65,7 +65,7 @@ if(isProduction) {
 module.exports = (api) => {
 	_.isFunction(api.assertVersion) && api.assertVersion("^7");
 	api.cache && _.isFunction(api.cache.invalidate) && api.cache.invalidate(
-		() => { return
+		() => {
 			if(_.isFunction(api.env)) {
 				return api.env();
 			} else {
