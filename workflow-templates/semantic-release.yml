@@ -1,0 +1,18 @@
+---
+
+name: Semantic Release
+
+on:
+  push:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - run: npx semantic-release
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Semantic Released
