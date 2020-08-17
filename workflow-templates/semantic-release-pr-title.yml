@@ -1,0 +1,29 @@
+---
+
+# If you use the "squash-and-merge" strategy for your PRs, then the PR title
+# becomes the commit message. This action ensures that the PR title matches
+# the Conventional Commits standard, so that the merge is picked up in the
+# changelog.
+
+name: Check PR title
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+      - ready_for_review
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: aslafy-z/conventional-pr-title-action@master
+        with:
+          success-state: Title follows the specification.
+          failure-state: Update the PR title to match Conventional Commits
+          context-name: conventional-pr-title
+          preset: conventional-changelog-conventionalcommits@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
