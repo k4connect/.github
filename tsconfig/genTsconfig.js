@@ -31,7 +31,7 @@ const COMMON_CONFIG = {
   compilerOptions: {
     allowJs: true,
     checkJs: true,
-    composite: true,
+    composite: false,
     declaration: true,
     declarationMap: true,
     sourceMap: true,
