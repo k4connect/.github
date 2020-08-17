@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/babel-preset",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Baseline Babel configuration",
   "main": "preset.js",
   "author": "Robert Fischer and Cloud Services",

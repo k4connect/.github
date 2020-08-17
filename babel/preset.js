@@ -12,7 +12,6 @@ const presets = [
 			useBuiltIns: "usage",
 			corejs: 3,
 			shippedProposals: true,
-			modules: "commonjs",
 		},
 	],
 ];
