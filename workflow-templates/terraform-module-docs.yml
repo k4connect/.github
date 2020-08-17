@@ -1,0 +1,31 @@
+---
+
+# This will generate documentation (in the form of USAGE.md) for any
+# Terraform modules it finds.
+
+name: Generate terraform docs
+on:
+  pull_request:
+    - opened
+    - reopened
+    - ready_for_review
+    - review_requested
+    - synchronize
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Render terraform docs to USAGE.md and commit
+        uses: Dirrk/terraform-docs@v1.0.8
+        with:
+          tf_docs_output_file: USAGE.md
+          tf_docs_output_method: replace
+          tf_docs_find_dir: true
+          tf_docs_git_push: true
+          tf_docs_git_commit_message: Update Terraform docs

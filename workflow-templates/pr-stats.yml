@@ -1,0 +1,22 @@
+---
+
+# Prints out a table of people who have recently reviewed/commented on PRs.
+# This should tell you who is paying attention to that particular repo.
+
+name: Pull Request Stats
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run pull request stats
+        uses: flowwer-dev/pull-request-stats@v1
+        with:
+          period: 180

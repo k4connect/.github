@@ -1,0 +1,73 @@
+---
+
+# Builds and pushes a Docker image to the specified repo.  This should work for
+# you out of the box: the necessary GitHub secrets are accessible to all of
+# @K4Connect's private repos. All you need is to create an ECR repo with the
+# same name as your GitHub repo, in the form "k4connect/<repo-name>". Make sure
+# that tags aren't immutable in that repo. With that done, this action will
+# automatically build the Docker image and and push it to ECR under the
+# following tags:
+#   * The SHA of the commit
+#   * The name of the branch or tag that was pushed
+#   * The GitHub username of the person who triggered the commit
+#
+# Additionally, if the branch is "master", it will push to the tag "latest".
+# To change the ref that will push to "latest", update the REF_FOR_LATEST
+# environment variable to the name of the git tag or branch that you want
+# the ECR "latest" tag to track.
+#
+# The only other thing you might want to tweak is the ECR_REPOSITORY environment
+# variable, which you can change to point to an ECR repo other than the one
+# named after the GitHub repo.
+
+name: Docker build and Push
+
+on:
+  push:
+    branches:
+      - "*"   # Any branch not containing a "/"
+    tags:
+      - "v*"  # Any tag starting with 'v' and not containing a "/"
+
+env:
+  ECR_REPOSITORY: "${{ github.repository }}"
+  REF_FOR_LATEST: master
+
+jobs:
+  main:
+    name: Build Dockerfile and push SHA/ref/actor tags
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ecr_tag:
+          - "${{github.sha}}"
+          - "${{github.ref}}"
+          - "${{github.actor}}"
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+      - name: Checkout the Code
+        uses: actions/checkout@v2
+      - name: Build and Push the Dockerfile
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ matrix.ecr_tag }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      - name: Build and Push the Dockerfile to "latest"
+        if: github.ref == env.REF_FOR_LATEST
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: latest
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG

@@ -1,0 +1,34 @@
+---
+
+# This tags and adds comments to unmergeable PRs, so that we don't waste time
+# reviewing them.  (The merge/rebase will dismiss any PR reviews.)
+
+name: Tag Unmergeable PRs
+on:
+
+  push:
+    branches:
+      - master
+      - development
+    tags:
+      - "!**"
+
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - review_requested
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checks to see if PRs are dirty
+        uses: eps1lon/actions-label-merge-conflict@releases/2.x
+        with:
+          dirtyLabel: "Cannot Be Merged"
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          commentOnDirty: "Please resolve the conflicts with the target branch."
+          commentOnClean: "Conflicts have been resolved."
