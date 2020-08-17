@@ -1,0 +1,52 @@
+---
+
+# Runs 'terraform validate' and https://github.com/liamg/tfsec on Terraform code
+#
+# If you are following K4 conventions and putting Terraform files in
+# './infrastructure/terraform', then this shouldn't need any additional
+# configuration. If your Terraform files are somewhere else, update the
+# defaults.run.working-directory value below.
+
+name: Terraform Validation and Security Scan
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+defaults:
+  run:
+    working-directory: ./infrastructure/terraform  # Change this as appropriate
+
+jobs:
+
+  checkout:
+    name: Checkout the code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+  validate:
+    name: Run 'terraform validate' on Terraform files
+    needs: checkout
+    steps:
+      - name: Initialize Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_wrapper: false
+      - name: Run validate
+        run: terraform validate -no-color
+
+  tfsec:
+    name: Run tfsec on Terraform files
+    needs: checkout
+    runs-on: ubuntu-latest
+    steps:
+      - name: Terraform security scan
+        uses: triat/terraform-security-scan@v2.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
