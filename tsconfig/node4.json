@@ -3,6 +3,7 @@
 		"enable": true
 	},
 	"compilerOptions": {
+		"allowJs": true,
 		"checkJs": true,
 		"composite": true,
 		"declaration": true,

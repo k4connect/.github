@@ -29,6 +29,7 @@ const COMMON_CONFIG = {
     enable: true,
   },
   compilerOptions: {
+    allowJs: true,
     checkJs: true,
     composite: true,
     declaration: true,

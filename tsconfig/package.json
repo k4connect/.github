@@ -1,6 +1,6 @@
 {
 	"name": "@k4connect/tsconfig",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "K4 tsconfig files for your extension pleasure",
 	"main": "genTsconfig.js",
 	"scripts": {
