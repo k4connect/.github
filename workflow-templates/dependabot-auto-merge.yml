@@ -1,0 +1,27 @@
+---
+
+# Auto-merges some Dependabot PRs. Dependabot PRs are are created when
+# Dependabot discovers a security vulnerability in one of the repo's
+# dependencies. If the PR is a change only in the patch or minor version
+# of a dependency, then it is automatically approved and merged. If the
+# PR would bump us up a major version, the PR is left open for
+# consideration.
+
+
+name: Auto-Merge Safe Dependabot Updates
+
+on:
+  pull_request:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+    steps:
+      - uses: hmarr/auto-approve-action@v2.0.0
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: ahmadnassri/action-dependabot-auto-merge@v1
+        with:
+          github-token: ${{ github.token }}
+          target: minor
