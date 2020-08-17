@@ -1,0 +1,16 @@
+---
+
+# This tags a handy label onto PRs based on their sizes.
+# No, it's not configurable. Sizes are from the K8s repo:
+# https://github.com/kubernetes/kubernetes/labels?q=size
+
+name: Label PR based on size
+on: pull_request
+jobs:
+  size-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign size label
+        uses: pascalgn/size-label-action@v0.2.3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
