@@ -11,15 +11,26 @@ on:
   create:
 
 jobs:
-  tests:
+
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+
+  fix:
+    runs-on: ubuntu-latest
+    needs: checkout
+    steps:
       - run: npm install eslint-plugin-only-warn
       - run: npx eslint --fix --plugin only-warn .
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Apply ESLint fixes
+          commit_message: style(eslint): Apply ESLint fixes
+
+  check:
+    runs-on: ubuntu-latest
+    needs: checkout
+    steps:
       - run: npx eslint .
