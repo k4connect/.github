@@ -28,7 +28,7 @@ const COMMON_CONFIG = {
   typeAcquisition: {
     enable: true,
   },
-  configOptions: {
+  compilerOptions: {
     checkJs: true,
     composite: true,
     declaration: true,

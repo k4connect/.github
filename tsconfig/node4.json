@@ -2,7 +2,7 @@
 	"typeAcquisition": {
 		"enable": true
 	},
-	"configOptions": {
+	"compilerOptions": {
 		"checkJs": true,
 		"composite": true,
 		"declaration": true,
@@ -19,11 +19,13 @@
 		"importsNotUsedAsValues": "error",
 		"newLine": "lf",
 		"resolveJsonModule": true,
-		"useDefineForClassFields": true,
-		"target": "ES3",
-		"downlevelIteration": true
+		"useDefineForClassFields": true
 	},
 	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "@tsconfig/recommended/tsconfig.json",
+	"configOptions": {
+		"target": "ES3",
+		"downlevelIteration": true
+	},
 	"display": "node4"
 }
