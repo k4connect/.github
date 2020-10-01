@@ -11,7 +11,7 @@ module.exports = {
 		[
 			'@semantic-release/git',
 			{ "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}" }
-		]
+		],
 		'@semantic-release/github',
 	],
 
@@ -31,6 +31,21 @@ module.exports = {
 			{"type": "release", "hidden": true},
 		],
 		releaseCommitMessageFormat: "release({{currentTag}}): {{hash}}",
+		issuePrefixes: [ // TODO Read these out of Jira's API
+			"DEMO-",
+			"K4ADV-",
+			"K4CAR-",
+			"K4CLOUD-",
+			"K4EDGE-",
+			"K4ENT-",
+			"K4OPSV1-",
+			"K4PIL-",
+			"K4SAND-",
+			"K4UX-",
+			"K4VOICE-",
+			"K4WEB-",
+		],
+		issueUrlFormat: "https://k4connect.atlassian.net/browse/{{id}}"
 	},
 
 	// The following release rules are in addition to the reasonable defaults:
