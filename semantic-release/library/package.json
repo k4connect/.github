@@ -1,6 +1,6 @@
 {
   "name": "@k4connect/semantic-release-config-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The shared config for library releases using the \"Semantic Release\" tool",
   "main": "release.config.js",
   "author": "Robert Fischer and Cloud Services",
